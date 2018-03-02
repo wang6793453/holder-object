@@ -11,6 +11,7 @@ FObjectHolder<T>支持的方法:
 <br>
 ```java
 FObjectHolder<View> holder = new FStrongObjectHolder<>(); //创建强引用Holder
+//FObjectHolder<View> holder = new FWeakObjectHolder<>();   //创建弱引用Holder
 
 holder.set(view);    //给Holder设置一个对象
 View Object = holder.get(); //获得Holder里面保存的对象
@@ -31,7 +32,7 @@ holder.setCallback(new FObjectHolder.Callback<View>() //设置对象变化回调
     {
         /**
          * 给Holder设置新对象的时候，如果Holder保存的旧对象不为null，会回调此方法
-         * 常用来做一些释放操作，如下例子
+         * 常用来做一些释放操作
          */
     }
 });
