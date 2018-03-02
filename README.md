@@ -14,7 +14,7 @@ FObjectHolder<View> holder = new FStrongObjectHolder<>(); //创建强引用Holde
 //FObjectHolder<View> holder = new FWeakObjectHolder<>();   //创建弱引用Holder
 
 holder.set(view);    //给Holder设置一个对象
-View Object = holder.get(); //获得Holder里面保存的对象
+View view = holder.get(); //获得Holder里面保存的对象
 
 holder.setCallback(new FObjectHolder.Callback<View>() //设置对象变化回调
 {
