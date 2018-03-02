@@ -7,7 +7,7 @@ FObjectHolder<T>有以下两个实现类:
 * FStrongObjectHolder<T> 强引用Holder
 * FWeakObjectHolder<T>   弱引用Holder
 
-FObjectHolder<T>支持的方法:
+FObjectHolder<T>的方法介绍:
 <br>
 ```java
 FObjectHolder<View> holder = new FStrongObjectHolder<>(); //创建强引用Holder
