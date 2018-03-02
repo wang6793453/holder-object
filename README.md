@@ -10,10 +10,10 @@ FObjectHolder<T>有以下两个实现类:
 FObjectHolder<T>支持的方法:
 <br>
 ```java
-FObjectHolder<T> holder = new FStrongObjectHolder<>(); //创建强引用Holder
+FObjectHolder<View> holder = new FStrongObjectHolder<>(); //创建强引用Holder
 
-holder.set(T object);    //给Holder设置一个对象
-T Object = holder.get(); //获得Holder里面保存的对象
+holder.set(view);    //给Holder设置一个对象
+View Object = holder.get(); //获得Holder里面保存的对象
 
 holder.setCallback(new FObjectHolder.Callback<View>() //设置对象变化回调
 {
