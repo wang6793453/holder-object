@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     object.addOnAttachStateChangeListener(mOnAttachStateChangeListener);
                 }
-                Log.i(TAG, "Strong onObjectSave:" + object);
+                Log.i(TAG, "onObjectSave:" + object);
             }
 
             @Override
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
                  * 常用来做一些释放操作，如下例子
                  */
                 object.removeOnAttachStateChangeListener(mOnAttachStateChangeListener);
-                Log.e(TAG, "Strong onObjectRelease:" + object);
+                Log.e(TAG, "onObjectRelease:" + object);
             }
         });
 
