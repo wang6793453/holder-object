@@ -1,6 +1,9 @@
 # About
 这个库的功能主要是用来做对象持有者，当对象持有者里面的对象发生变更的时候会通知回调对象，便于做一些初始化和释放的操作<br>
 
+## Gradle
+[![](https://jitpack.io/v/zj565061763/holder-object.svg)](https://jitpack.io/#zj565061763/holder-object)
+
 ## 简介
 FObjectHolder<T>有以下两个实现类:
 <br>
