@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
     /**
      * 强引用对象持有者
      */
-    private FObjectHolder<View> mStrongHolder = new FStrongObjectHolder<>();
+    private FObjectHolder<View> mObjectHolder = new FStrongObjectHolder<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
         /**
          * 设置对象变化回调
          */
-        mStrongHolder.setCallback(new FObjectHolder.Callback<View>()
+        mObjectHolder.setCallback(new FObjectHolder.Callback<View>()
         {
             @Override
             public void onObjectSave(View object)
@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        View view = mStrongHolder.get(); //获得Holder保存的对象
+        View view = mObjectHolder.get(); //获得Holder保存的对象
 
         findViewById(R.id.btn_set).setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                mStrongHolder.set(new TextView(MainActivity.this)); //设置新对象给Holder
+                mObjectHolder.set(new TextView(MainActivity.this)); //设置新对象给Holder
             }
         });
     }
