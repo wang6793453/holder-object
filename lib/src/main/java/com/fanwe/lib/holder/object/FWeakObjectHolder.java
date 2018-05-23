@@ -12,15 +12,9 @@ public class FWeakObjectHolder<T> extends FObjectHolder<T>
     private WeakReference<T> mWeakReference;
 
     @Override
-    protected void saveObject(T object)
+    protected final void saveObject(T object)
     {
-        if (object != null)
-        {
-            mWeakReference = new WeakReference<>(object);
-        } else
-        {
-            mWeakReference = null;
-        }
+        mWeakReference = object == null ? null : new WeakReference<>(object);
     }
 
     @Override

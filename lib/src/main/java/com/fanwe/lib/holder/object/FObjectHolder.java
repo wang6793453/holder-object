@@ -1,47 +1,42 @@
 package com.fanwe.lib.holder.object;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * 对象改变可以被监听的holder
  *
  * @param <T>
  */
-public abstract class FObjectHolder<T>
+public abstract class FObjectHolder<T> implements ObjectHolder<T>
 {
-    private Callback<T> mCallback;
+    private final List<Callback<T>> mCallbacks = new CopyOnWriteArrayList<>();
 
-    /**
-     * 设置回调对象
-     *
-     * @param callback
-     */
-    public final void setCallback(Callback<T> callback)
+    @Override
+    public synchronized void addCallback(ObjectHolder.Callback<T> callback)
     {
-        mCallback = callback;
+        if (callback == null || mCallbacks.contains(callback))
+            return;
+        mCallbacks.add(callback);
     }
 
-    /**
-     * 设置对象
-     *
-     * @param object
-     */
-    public final void set(T object)
+    @Override
+    public synchronized void removeCallback(Callback<T> callback)
     {
-        T old = get();
+        mCallbacks.remove(callback);
+    }
+
+    @Override
+    public synchronized final void set(T object)
+    {
+        final T old = get();
         if (old != object)
         {
-            if (old != null)
-            {
-                if (mCallback != null)
-                {
-                    mCallback.onObjectRelease(old);
-                }
-            }
-
             saveObject(object);
 
-            if (mCallback != null)
+            for (Callback item : mCallbacks)
             {
-                mCallback.onObjectSave(object);
+                item.onObjectChanged(object, old);
             }
         }
     }
@@ -59,31 +54,4 @@ public abstract class FObjectHolder<T>
      * @return
      */
     public abstract T get();
-
-    /**
-     * holder是否为空
-     *
-     * @return
-     */
-    public boolean isEmpty()
-    {
-        return get() == null;
-    }
-
-    public interface Callback<T>
-    {
-        /**
-         * 新对象被holder保存，object可能为null
-         *
-         * @param object
-         */
-        void onObjectSave(T object);
-
-        /**
-         * 旧对象被holder释放，object不为null
-         *
-         * @param object
-         */
-        void onObjectRelease(T object);
-    }
 }

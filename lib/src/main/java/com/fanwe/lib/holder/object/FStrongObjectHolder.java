@@ -10,7 +10,7 @@ public class FStrongObjectHolder<T> extends FObjectHolder<T>
     private T mObject;
 
     @Override
-    protected void saveObject(T object)
+    protected final void saveObject(T object)
     {
         mObject = object;
     }
