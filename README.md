@@ -5,10 +5,10 @@
 * FStrongObjectHolder<T> 强引用Holder
 * FWeakObjectHolder<T>   弱引用Holder
 
-## Gradle
-`implementation 'com.fanwe.android:animator:1.0.2'`
+# Gradle
+`implementation 'com.fanwe.android:holder-object:1.0.2'`
 
-## 简单DEMO
+# 简单DEMO
 ```java
 public class MainActivity extends AppCompatActivity
 {
