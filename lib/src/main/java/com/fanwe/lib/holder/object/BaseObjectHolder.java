@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * @param <T>
  */
-public abstract class FObjectHolder<T> implements ObjectHolder<T>
+public abstract class BaseObjectHolder<T> implements ObjectHolder<T>
 {
     private final List<Callback<T>> mCallbacks = new CopyOnWriteArrayList<>();
 

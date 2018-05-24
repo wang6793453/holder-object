@@ -5,7 +5,7 @@ package com.fanwe.lib.holder.object;
  *
  * @param <T>
  */
-public class FStrongObjectHolder<T> extends FObjectHolder<T>
+public class FStrongObjectHolder<T> extends BaseObjectHolder<T>
 {
     private T mObject;
 

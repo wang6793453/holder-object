@@ -7,7 +7,7 @@ import java.lang.ref.WeakReference;
  *
  * @param <T>
  */
-public class FWeakObjectHolder<T> extends FObjectHolder<T>
+public class FWeakObjectHolder<T> extends BaseObjectHolder<T>
 {
     private WeakReference<T> mWeakReference;
 
