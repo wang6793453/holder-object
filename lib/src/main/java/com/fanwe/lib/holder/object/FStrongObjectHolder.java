@@ -31,7 +31,7 @@ public class FStrongObjectHolder<T> extends BaseObjectHolder<T>
     }
 
     @Override
-    public T get()
+    public final T get()
     {
         return mObject;
     }

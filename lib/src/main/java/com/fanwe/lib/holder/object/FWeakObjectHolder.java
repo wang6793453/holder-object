@@ -33,7 +33,7 @@ public class FWeakObjectHolder<T> extends BaseObjectHolder<T>
     }
 
     @Override
-    public T get()
+    public final T get()
     {
         return mWeakReference == null ? null : mWeakReference.get();
     }
