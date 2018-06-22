@@ -6,7 +6,7 @@
 * FWeakObjectHolder<T>   弱引用Holder
 
 # Gradle
-`implementation 'com.fanwe.android:holder-object:1.0.4'`
+[![](https://jitpack.io/v/zj565061763/holder-object.svg)](https://jitpack.io/#zj565061763/holder-object)
 
 # 简单demo
 ```java
@@ -119,10 +119,10 @@ public interface ObjectHolder<T>
         /**
          * 对象变更回调
          *
-         * @param newObject 新设置的对象，可能为null
          * @param oldObject 旧的对象，可能为null
+         * @param newObject 新设置的对象，可能为null
          */
-        void onObjectChanged(T newObject, T oldObject);
+        void onObjectChanged(T oldObject, T newObject);
     }
 }
 ```
