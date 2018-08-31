@@ -119,10 +119,10 @@ public interface ObjectHolder<T>
         /**
          * 对象变更回调
          *
-         * @param newObject 新设置的对象，可能为null
          * @param oldObject 旧的对象，可能为null
+         * @param newObject 新设置的对象，可能为null
          */
-        void onObjectChanged(T newObject, T oldObject);
+        void onObjectChanged(T oldObject, T newObject);
     }
 }
 ```

@@ -13,15 +13,16 @@ public abstract class BaseObjectHolder<T> implements ObjectHolder<T>
     private final List<Callback<T>> mCallbacks = new CopyOnWriteArrayList<>();
 
     @Override
-    public synchronized void addCallback(ObjectHolder.Callback<T> callback)
+    public synchronized final void addCallback(ObjectHolder.Callback<T> callback)
     {
         if (callback == null || mCallbacks.contains(callback))
             return;
+
         mCallbacks.add(callback);
     }
 
     @Override
-    public synchronized void removeCallback(Callback<T> callback)
+    public synchronized final void removeCallback(Callback<T> callback)
     {
         mCallbacks.remove(callback);
     }
@@ -36,7 +37,7 @@ public abstract class BaseObjectHolder<T> implements ObjectHolder<T>
 
             for (Callback item : mCallbacks)
             {
-                item.onObjectChanged(object, old);
+                item.onObjectChanged(old, object);
             }
         }
     }
@@ -47,11 +48,4 @@ public abstract class BaseObjectHolder<T> implements ObjectHolder<T>
      * @param object
      */
     protected abstract void saveObject(T object);
-
-    /**
-     * 返回设置的对象
-     *
-     * @return
-     */
-    public abstract T get();
 }
