@@ -6,7 +6,7 @@
 * FWeakObjectHolder<T>   弱引用Holder
 
 # Gradle
-`implementation 'com.fanwe.android:holder-object:1.0.4'`
+[![](https://jitpack.io/v/zj565061763/holder-object.svg)](https://jitpack.io/#zj565061763/holder-object)
 
 # 简单demo
 ```java

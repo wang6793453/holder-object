@@ -1,4 +1,4 @@
-package com.fanwe.holder_object;
+package com.sd.holder_object;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.fanwe.lib.holder.object.FStrongObjectHolder;
-import com.fanwe.lib.holder.object.ObjectHolder;
+import com.sd.lib.holder.object.FStrongObjectHolder;
+import com.sd.lib.holder.object.ObjectHolder;
 
 public class MainActivity extends AppCompatActivity
 {
